@@ -34,7 +34,7 @@ public class TransactionService {
     @Value("${sample.dataset:abc.txt}")
     String sampleFile;
     
-    private Executor executor = Executors.newFixedThreadPool(1);
+    private Executor executor = Executors.newFixedThreadPool(10);
 
     public void processTransactions() {
         List<Transaction> transactions = extractTransactions(sampleFile);
